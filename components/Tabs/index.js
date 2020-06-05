@@ -8,6 +8,9 @@
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
 
+import axios from 'axios'
+
+
 
 function tabsMaker(){
 
