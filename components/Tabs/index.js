@@ -7,3 +7,16 @@
 //
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
+
+
+function tabsMaker(){
+
+let tabs = document.createElement("div")
+tabs.classList = "tab"
+tabs.textContentt = "topic here"
+
+console.log(tabs)
+}
+tabsMaker()
+
+
