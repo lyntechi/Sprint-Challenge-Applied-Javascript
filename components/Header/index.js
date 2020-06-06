@@ -10,16 +10,18 @@
 //
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
-const body = document.querySelector("body")
+// import axios from 'axios'
+
+console.log(axios)
 
 
+let headContainer = document.querySelector(".header-container")
 
-
-function Header() {
-
+function header() {
+   
     const headerDiv = document.createElement("div")
     headerDiv.classList = "header"
-    body.appendChild(headerDiv)
+    headContainer.appendChild(headerDiv)
     const date = document.createElement("span")
     date.classList = "date"
     headerDiv.appendChild(date)
@@ -32,8 +34,7 @@ function Header() {
     temp.textContent = "98°"
     headerDiv.appendChild(temp)
     return headerDiv;
-
-
 }
-console.log(Header())
+console.log(header())
+
 

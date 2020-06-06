@@ -8,18 +8,45 @@
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
 
-import axios from 'axios'
 
 
 
-function tabsMaker(){
 
-let tabs = document.createElement("div")
-tabs.classList = "tab"
-tabs.textContentt = "topic here"
+function getTopicsMaker(){
 
-console.log(tabs)
+    const thePromise = axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
+    
+    thePromise.then(function(response){
+        console.log('this is response from the API', response)
+
+        let topics = response.data.topics
+
+        topics.forEach(function(item){
+        let tab = document.createElement("div")
+        tab.classList = "tab"
+        let tabsTopics = document.querySelector(".tabs .topics")
+        tabsTopics.appendChild(tab)
+        tab.textContent = item;
+        return tab
+        })
+        
+    })
+
+    .catch(function(error){
+        
+        console.log('something went wrong', error)
+    })
+
+    .finally(function(){
+        console.log('done')
+    })
 }
-tabsMaker()
+
+getTopicsMaker()
+
+
+
+
+
 
 
