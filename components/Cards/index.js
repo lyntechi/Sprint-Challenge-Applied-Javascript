@@ -21,23 +21,158 @@
 
 
 
+ 
+
+    axios.get("https://lambda-times-backend.herokuapp.com/articles")
+
+    .then(function(response){
+      
+        let javascriptArticles = response.data.articles.javascript
+        console.log('this is the response for articles javascript', response)
+
+        javascriptArticles.forEach(function(item){
+       
+       
+        let cardsContainer = document.querySelector(".cards-container")
+        console.log(cardsContainer)
+        const card = document.createElement("div")
+        card.classList = "card"
+        cardsContainer.appendChild(card)
+        const headline = document.createElement("div")
+        headline.classList = "headline"
+        card.appendChild(headline)
+        const author = document.createElement("div")
+        author.classList ="author"
+        card.appendChild(author)
+        const imgContainer = document.createElement("div")
+        imgContainer.classList = "img-container"
+        author.appendChild(imgContainer)
+        const imgsrc = document.createElement("img")
+        imgsrc.src = ""
+        imgContainer.appendChild(imgsrc)
+        const authorsName = document.createElement("span")
+        author.appendChild(authorsName)
+        authorsName.textContent = " author's name";
+        authorsName.textContent = item.authorName;
+        imgsrc.src = item.authorPhoto;
+        headline.textContent = item.headline;
+      
+      })//this closes javascript articles
+
+       let articlesBootstrap = response.data.articles.bootstrap
+       console.log('this is the response for articles', response)
+
+       articlesBootstrap.forEach(function(item){
+       
+       
+        let cardsContainer = document.querySelector(".cards-container")
+        console.log(cardsContainer)
+        const card = document.createElement("div")
+        card.classList = "card"
+        cardsContainer.appendChild(card)
+        const headline = document.createElement("div")
+        headline.classList = "headline"
+        card.appendChild(headline)
+        const author = document.createElement("div")
+        author.classList ="author"
+        card.appendChild(author)
+        const imgContainer = document.createElement("div")
+        imgContainer.classList = "img-container"
+        author.appendChild(imgContainer)
+        const imgsrc = document.createElement("img")
+        imgsrc.src = ""
+        imgContainer.appendChild(imgsrc)
+        const authorsName = document.createElement("span")
+        author.appendChild(authorsName)
+        authorsName.textContent = " author's name";
+        authorsName.textContent = item.authorName;
+        imgsrc.src = item.authorPhoto;
+        headline.textContent = item.headline;
+      
+      })//this closes bootstrap forEach
+        
 
 
+        let technologyArticles = response.data.articles.technology
+        console.log('this is the response for technology javascript', response)
+
+        technologyArticles.forEach(function(item){
+       
+       
+        let cardsContainer = document.querySelector(".cards-container")
+        console.log(cardsContainer)
+        const card = document.createElement("div")
+        card.classList = "card"
+        cardsContainer.appendChild(card)
+        const headline = document.createElement("div")
+        headline.classList = "headline"
+        card.appendChild(headline)
+        const author = document.createElement("div")
+        author.classList ="author"
+        card.appendChild(author)
+        const imgContainer = document.createElement("div")
+        imgContainer.classList = "img-container"
+        author.appendChild(imgContainer)
+        const imgsrc = document.createElement("img")
+        imgsrc.src = ""
+        imgContainer.appendChild(imgsrc)
+        const authorsName = document.createElement("span")
+        author.appendChild(authorsName)
+        authorsName.textContent = " author's name";
+        authorsName.textContent = item.authorName;
+        imgsrc.src = item.authorPhoto;
+        headline.textContent = item.headline;
+      
+      })//this closes technology articles
 
 
-let cardsContainer = document.querySelector(".cards-container")
-console.log(cardsContainer)
+      
+      let jqueryArticles = response.data.articles.jquery
+      console.log('this is the response for  jquery', response)
 
-
-function cardMaker(){
+       jqueryArticles.forEach(function(item){
+     
+     
+      let cardsContainer = document.querySelector(".cards-container")
+      console.log(cardsContainer)
+      const card = document.createElement("div")
+      card.classList = "card"
+      cardsContainer.appendChild(card)
+      const headline = document.createElement("div")
+      headline.classList = "headline"
+      card.appendChild(headline)
+      const author = document.createElement("div")
+      author.classList ="author"
+      card.appendChild(author)
+      const imgContainer = document.createElement("div")
+      imgContainer.classList = "img-container"
+      author.appendChild(imgContainer)
+      const imgsrc = document.createElement("img")
+      imgsrc.src = ""
+      imgContainer.appendChild(imgsrc)
+      const authorsName = document.createElement("span")
+      author.appendChild(authorsName)
+      authorsName.textContent = " author's name";
+      authorsName.textContent = item.authorName;
+      imgsrc.src = item.authorPhoto;
+      headline.textContent = item.headline;
     
-  
+    })//this closes technology articles
+
+    
+    let nodeJsArticles = response.data.articles.node
+    console.log('this is the response for  jquery', response)
+
+     nodeJsArticles.forEach(function(item){
+   
+   
+    let cardsContainer = document.querySelector(".cards-container")
+    console.log(cardsContainer)
     const card = document.createElement("div")
     card.classList = "card"
     cardsContainer.appendChild(card)
     const headline = document.createElement("div")
     headline.classList = "headline"
-    // headline.textContent = "Headline of article"
     card.appendChild(headline)
     const author = document.createElement("div")
     author.classList ="author"
@@ -51,24 +186,14 @@ function cardMaker(){
     const authorsName = document.createElement("span")
     author.appendChild(authorsName)
     authorsName.textContent = " author's name";
+    authorsName.textContent = item.authorName;
+    imgsrc.src = item.authorPhoto;
+    headline.textContent = item.headline;
+  
+  })//this closes node.js articles
 
-
-
-    axios.get("https://lambda-times-backend.herokuapp.com/articles")
-
-    .then(function(response){
-
-       let articlesBootstrap = response.data.articles.bootstrap
-      console.log('this is the response for articles', response)
-
-        articlesBootstrap.forEach(function(item){
-        authorsName.textContent = item.authorName;
-        imgsrc.src = item.authorPhoto;
-        headline.textContent = item.headline;
-        
-      })
-    })
-
+    
+    })//this closes .then response
 
 
       .catch(function(error){
@@ -82,13 +207,6 @@ function cardMaker(){
 
 
 
-        return card
-
-      }
-
-    cardMaker();
-
-   
 
 
 
