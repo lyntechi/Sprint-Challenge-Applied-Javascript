@@ -12,11 +12,9 @@
 
 
 
-function getTopicsMaker(){
-
-    const thePromise = axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
-    
-    thePromise.then(function(response){
+      axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
+        
+      .then(function(response){
         console.log('this is response from the API', response)
 
         let topics = response.data.topics
@@ -40,9 +38,7 @@ function getTopicsMaker(){
     .finally(function(){
         console.log('done')
     })
-}
 
-getTopicsMaker()
 
 
 

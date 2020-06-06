@@ -12,7 +12,7 @@
 // and append it to the DOM inside the div.header-container
 // import axios from 'axios'
 
-console.log(axios)
+
 
 
 let headContainer = document.querySelector(".header-container")
