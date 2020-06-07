@@ -16,9 +16,19 @@
 
 
 let headContainer = document.querySelector(".header-container")
+//create a variable that selects an element that attaches to dom.
+//create a function that holds our components
+// create variables inside of your function that attaches each element that you need to grab from The 
+// attached the class name that you wish to display
+// ex div.textContent
+//append variable container to the HTML Variable created in step 1
+//append each variable element that you wish to display
+//return main element so that i can be displayed in the DOM. THE ACTUAL DOM 
+//
 
-function header() {
-   
+//
+
+function header() { 
     const headerDiv = document.createElement("div")
     headerDiv.classList = "header"
     headContainer.appendChild(headerDiv)
@@ -33,8 +43,10 @@ function header() {
     temp.classList = "temp" 
     temp.textContent = "98°"
     headerDiv.appendChild(temp)
+    console.log(headerDiv)
     return headerDiv;
 }
-console.log(header())
+header()
+
 
 
