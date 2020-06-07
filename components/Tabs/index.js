@@ -14,40 +14,38 @@
 
 
 
-       axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
-       .then(function(response){
-        console.log('response is successful',response)
+        axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
+        .then(function(response){
+            console.log('response is successful',response)
 
-        let topicsVariable = response.data.topics
+            let topicsVariable = response.data.topics
 
-        topicsVariable.forEach(function(item){
+            topicsVariable.forEach(function(item){
 
-        let tab = document.createElement("div")
+            let tab = document.createElement("div")
 
-        tab.classList = "tab"
+            tab.classList = "tab"
 
-        let tabsTopics = document.querySelector(".tabs .topics")
-        tabsTopics.appendChild(tab)
-        tab.textContent = item;
+            let tabsTopics = document.querySelector(".tabs .topics")
+            tabsTopics.appendChild(tab)
+            tab.textContent = item;
 
-            Return 
-        
+                
+            
+            })
+            
         })
-        
-    })
 
-    .catch(function(error){
-        
-        console.log('something went wrong', error)
-    })
+        .catch(function(error){
+            
+            console.log('something went wrong', error)
+        })
 
-    .finally(function(){
-        console.log('done')
-    })
+        .finally(function(){
+            console.log('done')
+        })
 
-
-
-
+ 
 
 
 
