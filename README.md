@@ -29,14 +29,20 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your team lead.
 
 1. What is the DOM?
+When a web page is loaded into a browser, the browser first looks for the HTML file. The browser uses the HTML file as a guide on how to build the page. The browser parses these instructions and builds a model for how the page should look and act using Javascript. This model is a Javascript Object containing every element in order on the page. This Object is referred to as the DOM, or Document Object Model.
 
 2. What is an event?
+Every user interaction with a site is an event: a click, moving the mouse, scrolling the page, pressing a key on the keyboard, these are all events on the page, and the browser can detect all of them. There are tons of different events the browser tracks. When an event happens on a page, it is known as a trigger.
 
 3. What is an event listener?
+Once we have an element selected, we can use the ‘.addEventListener’ method on that element. .addEventListener takes two arguments, first the event to listen for and, second, the callback to fire when that event is triggered. For a complete list of events see the resources below. In use, this looks something like element.addEventListener('click', callback)
 
 4. Why would we convert a NodeList into an Array?
+ To be able to iterate through the items we may need to use to be displayed
+ on the website page.
 
 5. What is a component?
+Its a function that renders UI to the page.
 
 ### Git Set up
 
