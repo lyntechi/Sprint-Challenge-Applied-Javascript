@@ -19,36 +19,121 @@
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
 
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
-.then(response => console.log('successful response from API',response))
-.catch(error => console.log('something happend unsuccessful response from API', error))
 
 
-function cardMaker (){
-const cardsContainer = document.querySelector('.cards-container')
-const card = document.createElement('div')
-const headline = document.createElement('div')
-const author = document.createElement('div')
-const imgContainer = document.createElement('div')
-const img = document.createElement('img')
-const authorsName = document.createElement('span')
-card.classList.add('card')
-headline.classList.add('headline')
-author.classList.add('author')
-imgContainer.classList.add('img-container')
-img.src='#'
-headline.textContent='Headline of article'
-authorsName.textContent='authors name'
 
-cardsContainer.appendChild(card)
-card.appendChild(headline)
-card.appendChild(author)
-author.appendChild(imgContainer)
-imgContainer.appendChild(img)
-author.appendChild(authorsName)
-console.log(cardsContainer)
-return card
 
-}
 
-cardMaker()
+
+let createCardMaker = function (headlineInfo, name, photo) {
+  let card = document.createElement("div");
+  let headlineDiv = document.createElement("div");
+  let author = document.createElement("div");
+  let imgContainer = document.createElement("div");
+  let imgsrc = document.createElement("img");
+  let authorsName = document.createElement("span");
+
+  card.appendChild(headlineDiv);
+  card.appendChild(author);
+  author.appendChild(imgContainer);
+  imgContainer.appendChild(imgsrc);
+  author.appendChild(authorsName);
+
+  card.classList = "card";
+  headlineDiv.classList = "headline";
+  author.classList = "author";
+  imgContainer.classList = "img-container";
+
+  headlineDiv.textContent = headlineInfo;
+  authorsName.textContent = name;
+  imgsrc.src = photo;
+
+  return card;
+};
+
+let cardsContainer = document.querySelector(".cards-container");
+
+axios
+  .get("https://lambda-times-backend.herokuapp.com/articles")
+
+  .then(function (response) {
+    let javascriptArticles = response.data.articles.javascript;
+    console.log("this is the response from data", response.data);
+
+    javascriptArticles.forEach(function (item) {
+      let newArticleCard = createCardMaker(
+        item.headline,
+        item.authorName,
+        item.authorPhoto
+      ); 
+      cardsContainer.appendChild(newArticleCard);
+      console.log("this is item", item);
+    });
+
+    let bootstrapArticles = response.data.articles.bootstrap;
+    console.log("this is the response from data", response.data);
+
+    bootstrapArticles.forEach(function (item) {
+      let newArticleCard = createCardMaker(
+        item.headline,
+        item.authorName,
+        item.authorPhoto
+      ); 
+      cardsContainer.appendChild(newArticleCard);
+      console.log("this is item", item);
+    });
+
+    let technologyArticles = response.data.articles.technology;
+    console.log("this is the response from data", response.data);
+
+    technologyArticles.forEach(function (item) {
+      let newArticleCard = createCardMaker(
+        item.headline,
+        item.authorName,
+        item.authorPhoto
+      ); 
+      cardsContainer.appendChild(newArticleCard);
+      console.log("this is item", item);
+    });
+
+    let jqueryArticles = response.data.articles.jquery;
+    console.log("this is the response from data", response.data);
+
+    jqueryArticles.forEach(function (item) {
+      let newArticleCard = createCardMaker(
+        item.headline,
+        item.authorName,
+        item.authorPhoto
+      ); 
+      cardsContainer.appendChild(newArticleCard);
+      console.log("this is item", item);
+    });
+    let nodeArticles = response.data.articles.node;
+    console.log("this is the response from data", response.data);
+
+    nodeArticles.forEach(function (item) {
+      let newArticleCard = createCardMaker(
+        item.headline,
+        item.authorName,
+        item.authorPhoto
+      ); 
+      cardsContainer.appendChild(newArticleCard);
+      console.log("this is item", item);
+    });
+  })
+
+  .catch(function (error) {
+    console.log("something went wrong", error);
+  })
+
+  .finally(function () {
+    console.log("done");
+  });
+
+ 
+
+
+
+
+
+
